@@ -1,0 +1,86 @@
+.top-navigation-menu {
+  @apply bg-gray-800 text-white p-2 grid grid-cols-3 items-center;
+
+  &__pages {
+    @apply flex space-x-4;
+    grid-column: 1;
+    margin: 0;
+  }
+
+  &__logo {
+    @apply text-xl font-bold col-span-1 text-center;
+  }
+
+  &__account {
+    @apply grid justify-self-end items-center col-span-1;
+  }
+
+  &__settings,
+  &__logout {
+    @apply ml-4;
+  }
+}
+
+.main-navigation-menu {
+  @apply bg-white text-black p-2 grid grid-cols-3 items-center;
+
+  &__pages {
+    @apply flex space-x-4;
+    grid-column: 1;
+    margin: 0;
+  }
+
+  &__logo {
+    @apply text-xl font-bold col-span-1 text-center;
+  }
+
+  &__account {
+    @apply grid justify-self-end items-center col-span-1;
+  }
+
+  &__settings,
+  &__logout {
+    @apply ml-4;
+  }
+}
+
+.top-navigation-menu-link {
+  @apply text-white;
+  &:hover {
+    color: brown;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.top-navigation-menu-item {
+  @apply flex items-center;
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.top-navigation-menu-item:hover {
+  color: brown;
+}
+
+.main-navigation-menu-link {
+  @apply text-black;
+  &:hover {
+    color: brown;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.main-navigation-menu-item {
+  @apply flex items-center;
+  &:hover {
+    color: brown;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
