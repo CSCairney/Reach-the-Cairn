@@ -2,11 +2,10 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import { Metadata } from 'next';
 import LocalStorage from '@/components/common/LocalStorage';
-import ReduxTester from '@/components/common/ReduxTester';
 
 export const metadata: Metadata = {
-  title: "Home | Idle Miner",
-  description: 'The Offical Idle Miner',
+  title: "Reach the Cairn",
+  description: 'Offical website of @reachthecairn on instagram',
 };
 
 export default function Home() {
@@ -14,8 +13,8 @@ export default function Home() {
     <main className={styles.main}>
       <LocalStorage />
       <div className={styles.description}>
-        <h2 className={styles.heading}>This is the starting page</h2>
-        <ReduxTester />
+        <h1>Reach the Cain</h1>
+        <h2 className={styles.heading}>This is the landing page of reach the cairn</h2>
       </div>
     </main>
   )

@@ -3,16 +3,16 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 export const metadata: Metadata = {
-    title: "Contact Us | Idle Miner",
-    description: 'Tell us more about your experience with the Idle Miner App',
+    title: "Reach the Art",
+    description: 'A door into the artist nature of reach the cairn community',
   };
 
-const Contact = () => {
+const Art = () => {
     return (
         <div className={styles.contact}>
-            <h1>Contact</h1>
+            <h1>Reach the art</h1>
         </div>
     );
 }
 
-export default Contact;
+export default Art;
