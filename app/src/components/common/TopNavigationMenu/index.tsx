@@ -2,12 +2,15 @@
 import { NavigationLinkDetails } from '@/types/common/navigation/navigation';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink } from '@/components/ui/navigation-menu';
 import React from 'react';
-import Link from 'next/link';
 import "./styles.scss";
+import dynamic from 'next/dynamic';
 
 interface TopNavigationMenuProps {
   navigationDetails: NavigationLinkDetails;
 }
+
+// Lazy load Link component
+const Link = dynamic(() => import('next/link'));
 
 const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails }) => {
   const { links, isSettingsEnabled, isLogoutEnabled, isLogoPresent, isMainMenu } = navigationDetails;
