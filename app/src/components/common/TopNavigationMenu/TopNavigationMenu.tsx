@@ -6,6 +6,7 @@ import "./styles.scss";
 import dynamic from 'next/dynamic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faEnvelope, faGear, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useToast } from '@/components/ui/use-toast';
 
 interface TopNavigationMenuProps {
   navigationDetails: NavigationLinkDetails;
@@ -17,6 +18,14 @@ const Link = dynamic(() => import('next/link'));
 const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails }) => {
   const { links, isSettingsEnabled, isLogoutEnabled, isLogoPresent, isMainMenu } = navigationDetails;
   const menuStyling = isMainMenu ? 'main-navigation-menu' : 'top-navigation-menu';
+  const { toast } = useToast();
+
+  const handleDevelopmentToastAlert = () => {
+    toast({
+      title: "Notice: Development in Progress",
+      description: "Friday, February 10, 2023 at 5:57 PM",
+    });
+  }
 
   return (
     <NavigationMenu className={menuStyling}>
@@ -39,19 +48,11 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
       <div className={`${menuStyling}__account`}>
       {isSettingsEnabled && (
         <div className={`${menuStyling}__settings`}>
-          <NavigationMenuItem className={`${menuStyling}-item`}>
-            <Link href="/settings">
-              <NavigationMenuLink aria-description='search bar toggle'  className={`${menuStyling}-link`}>
+          <NavigationMenuItem aria-description='search bar toggle' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert} >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </NavigationMenuLink>
-            </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className={`${menuStyling}-item`}>
-            <Link href="/notifications">
-              <NavigationMenuLink aria-description='notifications page link' className={`${menuStyling}-link`}>
+          <NavigationMenuItem aria-description='notifications page link' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert} >
                 <FontAwesomeIcon icon={faEnvelope} />
-              </NavigationMenuLink>
-            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className={`${menuStyling}-item`}>
             <Link href="/settings">
@@ -60,10 +61,8 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className={`${menuStyling}-item`}>
-              <NavigationMenuLink aria-description='dropdown menu' className={`${menuStyling}-link`}>
+          <NavigationMenuItem aria-description='dropdown menu' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert}>
                 <FontAwesomeIcon icon={faBars} />
-              </NavigationMenuLink>
           </NavigationMenuItem>
         </div>
       )}
