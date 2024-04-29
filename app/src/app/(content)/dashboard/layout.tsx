@@ -1,4 +1,4 @@
-import TopNavigationMenu from "@/components/common/TopNavigationMenu";
+import TopNavigationMenu from "@/components/common/TopNavigationMenu/TopNavigationMenu";
 import styles from "./styles.module.scss";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

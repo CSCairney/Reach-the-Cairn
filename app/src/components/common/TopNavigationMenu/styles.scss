@@ -38,7 +38,9 @@
     @apply grid justify-self-end items-center col-span-1;
   }
 
-  &__settings,
+  &__settings {
+    @apply grid grid-cols-4 justify-end gap-8;
+  }
   &__logout {
     @apply ml-4;
   }

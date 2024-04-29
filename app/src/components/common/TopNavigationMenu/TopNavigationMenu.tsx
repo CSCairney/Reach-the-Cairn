@@ -4,6 +4,8 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink } from '@/compon
 import React from 'react';
 import "./styles.scss";
 import dynamic from 'next/dynamic';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faEnvelope, faGear, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 interface TopNavigationMenuProps {
   navigationDetails: NavigationLinkDetails;
@@ -39,10 +41,29 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
         <div className={`${menuStyling}__settings`}>
           <NavigationMenuItem className={`${menuStyling}-item`}>
             <Link href="/settings">
-              <NavigationMenuLink className={`${menuStyling}-link`}>
-                Settings
+              <NavigationMenuLink aria-description='search bar toggle'  className={`${menuStyling}-link`}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
               </NavigationMenuLink>
             </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className={`${menuStyling}-item`}>
+            <Link href="/notifications">
+              <NavigationMenuLink aria-description='notifications page link' className={`${menuStyling}-link`}>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className={`${menuStyling}-item`}>
+            <Link href="/settings">
+              <NavigationMenuLink aria-description='settings page link' className={`${menuStyling}-link`}>
+              <FontAwesomeIcon icon={faGear} />
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className={`${menuStyling}-item`}>
+              <NavigationMenuLink aria-description='dropdown menu' className={`${menuStyling}-link`}>
+                <FontAwesomeIcon icon={faBars} />
+              </NavigationMenuLink>
           </NavigationMenuItem>
         </div>
       )}

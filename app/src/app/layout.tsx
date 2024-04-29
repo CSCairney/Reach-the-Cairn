@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from "./layout.module.scss";
 import { Provider } from 'react-redux';
 import { store } from './store';
-import TopNavigationMenu from '@/components/common/TopNavigationMenu';
+import TopNavigationMenu from '@/components/common/TopNavigationMenu/TopNavigationMenu';
 
 const inter = Inter({ subsets: ['latin'] })
 
