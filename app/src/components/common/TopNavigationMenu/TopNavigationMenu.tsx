@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faEnvelope, faGear, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useToast } from '@/components/ui/use-toast';
 import { useNotifications } from '@/hooks/Notifications/useNotifications';
+import { NotificationsPreview } from '../NotificationsPreview/NotificationsPreview';
 
 interface TopNavigationMenuProps {
   navigationDetails: NavigationLinkDetails;
@@ -51,24 +52,27 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
       )}
       <div className={`${menuStyling}__account`}>
       {isSettingsEnabled && (
-        <div className={`${menuStyling}__settings`}>
-          <NavigationMenuItem aria-description='search bar toggle' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert} >
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </NavigationMenuItem>
-          <NavigationMenuItem aria-description='notifications page link' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert} >
-                <FontAwesomeIcon icon={faEnvelope} />
-          </NavigationMenuItem>
-          <NavigationMenuItem className={`${menuStyling}-item`}>
-            <Link href="/settings">
-              <NavigationMenuLink aria-description='settings page link' className={`${menuStyling}-link`}>
-              <FontAwesomeIcon icon={faGear} />
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem aria-description='dropdown menu' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert}>
-                <FontAwesomeIcon icon={faBars} />
-          </NavigationMenuItem>
-        </div>
+        <>
+          <div className={`${menuStyling}__settings`}>
+            <NavigationMenuItem aria-description='search bar toggle' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert} >
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </NavigationMenuItem>
+            <NavigationMenuItem aria-description='notifications page link' className={`${menuStyling}-item`} onClick={() => setPreviewVisible(!previewVisible)} >
+                  <FontAwesomeIcon icon={faEnvelope} />
+            </NavigationMenuItem>
+            <NavigationMenuItem className={`${menuStyling}-item`}>
+              <Link href="/settings">
+                <NavigationMenuLink aria-description='settings page link' className={`${menuStyling}-link`}>
+                <FontAwesomeIcon icon={faGear} />
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem aria-description='dropdown menu' className={`${menuStyling}-item`} onClick={handleDevelopmentToastAlert}>
+                  <FontAwesomeIcon icon={faBars} />
+            </NavigationMenuItem>
+          </div>
+          {previewVisible && <NotificationsPreview notifications={notifications} className='notifications-preview' />}
+        </>
       )}
 
       {isLogoutEnabled && (

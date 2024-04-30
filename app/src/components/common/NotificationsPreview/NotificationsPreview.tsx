@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { Notifications } from "@/types/common/notifications/notifications"
+import Styles from "./styles.module.scss"
 
 type NotificationsPreviewProps = React.ComponentProps<typeof Card> & {
     notifications: Notifications;
@@ -21,22 +22,10 @@ export function NotificationsPreview({ notifications, className, ...props }: Not
   return (
     <Card className={cn("w-[380px]", className)} {...props}>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have ${notifications.length} unread messages.</CardDescription>
+        <CardTitle className={Styles.title} >Notifications</CardTitle>
+        <CardDescription className={Styles.description} >You have ${notifications.length} unread messages.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className="flex items-center p-4 space-x-4 border rounded-md ">
-          <BellRing />
-          <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
-          </div>
-          <Switch />
-        </div>
         <div>
           {notifications.map((notification, index) => (
             <div
