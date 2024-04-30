@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faEnvelope, faGear, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useToast } from '@/components/ui/use-toast';
+import { useNotifications } from '@/hooks/Notifications/useNotifications';
 
 interface TopNavigationMenuProps {
   navigationDetails: NavigationLinkDetails;
@@ -19,6 +20,7 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
   const { links, isSettingsEnabled, isLogoutEnabled, isLogoPresent, isMainMenu } = navigationDetails;
   const menuStyling = isMainMenu ? 'main-navigation-menu' : 'top-navigation-menu';
   const { toast } = useToast();
+  const { setPreviewVisible, previewVisible, notifications } = useNotifications();
 
   const handleDevelopmentToastAlert = () => {
     console.log('Menu toast alert triggered');
