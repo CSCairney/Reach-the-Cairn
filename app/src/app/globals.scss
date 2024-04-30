@@ -74,3 +74,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+  /* Style all <a> tags */
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style visited <a> tags */
+  a:visited {
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style <a> tags on hover */
+  a:hover {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }

@@ -1,6 +1,22 @@
 .top-navigation-menu {
   @apply bg-gray-800 text-white p-2 grid grid-cols-3 items-center;
 
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style visited <a> tags */
+  a:visited {
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style <a> tags on hover */
+  a:hover {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+
   &__pages {
     @apply flex space-x-4;
     grid-column: 1;
@@ -23,6 +39,22 @@
 
 .main-navigation-menu {
   @apply bg-white text-black p-2 grid grid-cols-3 items-center;
+
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style visited <a> tags */
+  a:visited {
+    color: inherit; /* Inherit color from parent */
+  }
+
+  /* Style <a> tags on hover */
+  a:hover {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
 
   &__pages {
     @apply flex space-x-4;
