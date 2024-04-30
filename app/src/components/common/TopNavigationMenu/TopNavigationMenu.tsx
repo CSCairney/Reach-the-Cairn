@@ -21,7 +21,9 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
   const { toast } = useToast();
 
   const handleDevelopmentToastAlert = () => {
+    console.log('Menu toast alert triggered');
     toast({
+      variant: 'destructive',
       title: "Notice: Development in Progress",
       description: "Friday, February 10, 2023 at 5:57 PM",
     });

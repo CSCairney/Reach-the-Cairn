@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import TopNavigationMenu from '@/components/common/TopNavigationMenu/TopNavigationMenu';
 import { Toaster } from '@/components/ui/toaster';
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,11 +32,9 @@ export default function RootLayout({
       <Provider store={store}>
         <body className={`${inter.className} ${styles.application}`} >
               <TopNavigationMenu navigationDetails={menuDetails} />
-              <Suspense fallback={<div>Loading...</div>}>
                 {children}
-              </Suspense>
+                <Toaster />
         </body>
-        <Toaster />
       </Provider>
     </html>
   )
