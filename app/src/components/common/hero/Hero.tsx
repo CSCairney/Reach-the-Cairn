@@ -1,24 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import clsx from 'clsx';
+import styles from './styles.module.scss';
 
 export interface HeroProps {
   title: string;
   description: string;
-  image: string;
+  imageSrc: string;
+  imageAlt: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, description, image }) => {
+const Hero: React.FC<HeroProps> = ({ title, description, imageSrc, imageAlt }) => {
   return (
-    <div className="flex flex-col-reverse items-center p-4 bg-gray-100 lg:flex-row lg:p-8">
-      <div className="flex-1 text-center lg:pr-8 lg:text-left">
-        <h1 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{title}</h1>
-        <p className="mb-6 text-lg sm:text-xl md:text-2xl lg:text-3xl">{description}</p>
-        <button className="px-4 py-2 text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600">
+    <div className={clsx("relative flex items-center justify-center w-screen h-screen bg-gray-100", styles.container)}>
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        className={clsx("absolute inset-0 object-cover w-full h-full -z-10", styles.image)}
+      />
+      <div className={clsx("relative z-10 p-4 text-center text-white bg-black bg-opacity-50 rounded-lg lg:p-8", styles.text)}>
+        <h1 className={clsx("mb-4 text-2xl font-bold xsm:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl")}>
+          {title}
+        </h1>
+        <p className={clsx("mb-6 text-base xsm:text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl")}>
+          {description}
+        </p>
+        <button className={clsx("px-4 py-2 transition duration-300 bg-blue-500 rounded hover:bg-blue-600")}>
           Learn More
         </button>
-      </div>
-      <div className="flex-1 mb-6 lg:mb-0">
-        <img src={image} alt="Hero" className="w-full h-auto rounded-lg shadow-lg" />
       </div>
     </div>
   );

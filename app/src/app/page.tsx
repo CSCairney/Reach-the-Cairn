@@ -1,3 +1,4 @@
+import { Header } from '@/components/home';
 import styles from './page.module.css'
 import { Metadata } from 'next';
 
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <h1>Reach the Cain</h1>
-        <h2 className={styles.heading}>This is the landing page of reach the cairn</h2>
-      </div>
+      <Header />
     </main>
   )
 }
