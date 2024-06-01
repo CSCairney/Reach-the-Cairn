@@ -2,12 +2,15 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
+import { Button } from '../button/Button';
+import Link from 'next/link';
 
 export interface HeroProps {
   title: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
+  link: string;
 }
 
 const Hero: React.FC<HeroProps> = ({ title, description, imageSrc, imageAlt }) => {
@@ -25,9 +28,9 @@ const Hero: React.FC<HeroProps> = ({ title, description, imageSrc, imageAlt }) =
         <p className={clsx("mb-6 text-base xsm:text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl")}>
           {description}
         </p>
-        <button className={clsx("px-4 py-2 transition duration-300 bg-blue-500 rounded hover:bg-blue-600")}>
-          Learn More
-        </button>
+        <Button variant="secondary" size="lg">
+          <Link href="/art">Checkout some new art</Link>
+        </Button>
       </div>
     </div>
   );

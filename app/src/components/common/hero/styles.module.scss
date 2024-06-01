@@ -1,6 +1,7 @@
 .container {
   position: relative;
   width: 100vw;
+  height: 50vh;
   overflow: hidden;
 
 }
@@ -20,4 +21,8 @@
   transform: translate(-50%, -50%);
   z-index: 10;
   text-align: center;
+}
+
+.learnButton {
+  cursor: pointer;
 }
