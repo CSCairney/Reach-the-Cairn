@@ -16,10 +16,10 @@ export default function RootLayout({
   // TODO - Remove these links from state into database config file
   const menuDetails = {
     links: [
-      { label: 'home', url: '/' },
-      { label: 'dashboard', url: '/dashboard' },
-      { label: 'health', url: '/about' },
-      { label: 'art', url: '/art' },
+      { label: 'HOME', url: '/' },
+      { label: 'DASHBOARD', url: '/dashboard' },
+      { label: 'HEALTH', url: '/about' },
+      { label: 'ART', url: '/art' },
     ],
     isSettingsEnabled: true,
     isLogoutEnabled: false,
