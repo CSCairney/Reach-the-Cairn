@@ -2,14 +2,14 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-    title: "Invoices | Dashboard",
-    description: 'Invoices of the Idle Miner App',
+    title: "Privacy | Dashboard",
+    description: 'Privacy Settings',
   };
   
 const Invoices = () => {
     return (
         <div>
-            <h1>Invoices</h1>
+            <h1>Privacy Settings</h1>
         </div>
     );
 }
