@@ -44,7 +44,7 @@ const TopNavigationMenu: React.FC<TopNavigationMenuProps> = ({ navigationDetails
       </div>
       {isLogoPresent && (
         <div className={`${menuStyling}__logo`}>
-          <p>Reach the Cairn</p>
+          <p></p>
         </div>
       )}
       <div className={`${menuStyling}__account`}>

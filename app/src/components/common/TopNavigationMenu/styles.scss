@@ -38,7 +38,17 @@
 }
 
 .main-navigation-menu {
-  @apply bg-white text-black p-2 grid grid-cols-3 items-center;
+  @apply text-white text-xl p-2 grid grid-cols-3 items-center;
+  position: fixed;
+  top: 0;
+  left: 2.5%;
+  z-index: 1000;
+  width: 95%;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1px white solid;
+  font-family: 'Dilan';
+  font-weight: 400;
+  font-style: normal;
 
   a {
     text-decoration: none; /* Remove underline */
